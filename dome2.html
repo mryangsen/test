@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        .wrap .square {
+            width: 50px;
+            height: 50px;
+            background: #2100FF;
+            position: absolute;
+            left: 75px;
+            top: 75px;
+            z-index: 5;
+        }
+
+        .wrap .arrow {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+
+        .wrap .arrow-top {
+            background: #ED000A;
+            /* border: 1px solid red; */
+            top: 0;
+            left: 0;
+            clip-path: polygon(0 0, 100% 0, 50% 50%);
+
+        }
+
+        .wrap .arrow-right {
+            background: #FDFE00;
+            /* border: 1px solid blue; */
+            top: 0;
+            right: 0;
+            clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+        }
+
+        .wrap .arrow-bottom {
+            background: #308100;
+            /* border: 1px solid red; */
+            bottom: 0;
+            left: 0;
+            clip-path: polygon(0 100%, 50% 50%, 100% 100%);
+        }
+        .wrap .arrow-left {
+            background: #F7BFCC;
+            top: 0;
+            left: 0;
+            clip-path: polygon(0 100%, 50% 50%, -100% -100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="arrow arrow-top" onclick="changeText(this)"></div>
+        <div class="arrow arrow-right" onclick="changeText(this)"></div>
+        <div class="arrow arrow-bottom"></div>
+        <div class="arrow arrow-left"></div>
+        <div class="square" onclick="changeText(this)"></div>
+    </div>
+    <script>
+        var cc = document.getElementsByClassName('arrow');
+        for (var i = 0; i < cc.length; i++) {
+            cc[i].onclick = function (e) {
+                console.log(e.target)
+            }
+        }
+        function changeText(id) {
+
+            console.log('22')
+
+        }
+
+    </script>
+</body>
+
+</html>
+
+<!-- 用 clip 属性来裁剪元素，这样才能有点击区域，不然其他方法虽然能实现布局但是点击趋势无法区分的
+ 其实还有一种方法就是图片热点，截一张图然后划分五个热点，每个热点都可单独点击 -->

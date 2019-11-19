@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css" id='css'>
+        #progress {
+            position: fixed;
+            background: #000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99999;
+        }
+
+        #progress p {
+            width: 0px;
+            height: 30px;
+            border-radius: 3px;
+            background: #ffcccc;
+            color: #330000;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 30px;
+            text-align: center;
+            overflow: hidden;
+            font-family: 'Microsoft yahei';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -15px;
+            margin-left: -250px;
+        }
+
+        body {
+            overflow: hidden;
+        }
+    </style>
+
+<body>
+
+    <div id='progress'>
+        <p>0%</p>
+    </div>
+
+    <script>
+        //js进度条代码
+        var oP = document.getElementById('progress').getElementsByTagName('p')[0];
+        var oCss = document.getElementById('css');
+
+        function move(num) {
+            clearInterval(oP.timer);
+            oP.timer = setInterval(function () {
+                if (parseInt(oP.innerHTML) < num) {
+                    var s = parseInt(oP.innerHTML) + 1;
+                    var w = 500 * s / 100;
+                    oP.innerHTML = s + '%';
+                    oP.style.width = w + 'px';
+                } else {
+                    clearInterval(oP.timer);
+                    if (num == 100) { //js进度条代码等于100表示加载完成
+                        oP.parentNode.parentNode.removeChild(oP.parentNode);
+                        oCss.parentNode.removeChild(oCss);
+                        var oScript = document.getElementsByClassName('pMove');
+                        var length = oScript.length
+                        for (var i = length - 1; i >= 0; i--) {
+                            oScript[i].parentNode.removeChild(oScript[i]);
+                        }
+                    }
+                }
+            }, 10);
+        };
+    </script>
+</body>
+
+<script class='pMove'>
+    move(100); //执行到body，表示js进度条已经加载完成，遮罩层退场
+</script>
+
+</html>

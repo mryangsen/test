@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+        }
+        .top {
+            position: absolute;
+            width: 100px;
+            height: 196px;
+            background-color: blue;
+            transform: scaleY(1) perspective(4.5px) rotateX(-5deg);
+            transform-origin: top;
+        }
+
+        .right {
+            position: absolute;
+            left: 20px;
+            top: 13px;
+            width: 0;
+            height: 0;
+            border-width: 40px;
+            border-style: solid;
+            border-color: transparent red transparent  transparent ;
+        }
+
+        .bottom {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            transform: scaleY(1) perspective(4.5px) rotateX(5deg);
+            transform-origin: bottom;
+        }
+        .left {
+            position: absolute;
+            top: 13px;
+            left: 0px;
+            width: 0;
+            height: 0;
+            border-width: 40px;
+            border-style: solid;
+            border-color: transparent transparent transparent red;
+        }
+
+        /* .content {
+            position: absolute;
+            top: 34px;
+            left: 34px;
+            width: 32px;
+            height: 32px;
+
+            background-color: black;
+            ;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top"></div>
+        <div class="right"></div>
+        <div class="bottom"></div>
+        <div class="left"></div>
+        <div class="content"></div>
+    </div>
+    <script>
+//        function changeText(id) { 
+    // onclick="changeText(this)"
+//    console.log('22')
+
+// }
+
+
+
+    </script>
+</body>
+
+</html>

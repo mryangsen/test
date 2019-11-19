@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            position: relative;
+            width: 210px;
+            height: 210px;
+            margin: 150px 400px;
+            overflow: hidden;
+            border: 1px solid black;
+        }
+
+        .container {
+            position: absolute;
+            top: 0;
+            left: -45px;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 300px;
+            height: 300px;
+            transform: rotate(45deg);
+            font-size: 0;
+            box-sizing: border-box;
+            background-color: red;
+        }
+
+        div {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+        }
+
+        .div1 {
+            outline: black solid 1px;
+            /* background-color: red; */
+        }
+
+        .div2 {
+            /*     outline: black solid 1px; */
+            /* background-color: pink; */
+        }
+
+        .div3 {
+            /*     outline: black solid 1px; */
+            /* background-color: yellow; */
+        }
+
+        .div4 {
+            outline: black solid 1px;
+            /* background-color: green; */
+        }
+
+        .div5 {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            left: 150px;
+            top: 150px;
+            transform: translate(-50%, -50%) rotate(45deg);
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="div1"></div>
+            <div class="div2"></div>
+            <div class="div3"></div>
+            <div class="div4"></div>
+            <div class="div5"></div>
+        </div>
+    </div>
+    <script>
+        const div1 = document.getElementsByClassName("div1")[0];
+        const div2 = document.getElementsByClassName("div2")[0];
+        const div3 = document.getElementsByClassName("div3")[0];
+        const div4 = document.getElementsByClassName("div4")[0];
+        const div5 = document.getElementsByClassName("div5")[0];
+        div1.addEventListener('click', function () {
+            div1.style.backgroundColor = 'red'
+        })
+        div2.addEventListener('click', function () {
+            div2.style.backgroundColor = 'pink'
+        })
+        div3.addEventListener('click', function () {
+            div3.style.backgroundColor = 'yellow'
+        })
+        div4.addEventListener('click', function () {
+            div4.style.backgroundColor = 'green'
+        })
+        div5.addEventListener('click', function () {
+            div5.style.backgroundColor = 'red'
+        })
+
+    </script>
+</body>
+
+</html>

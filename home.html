@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+            width: 102px;
+            height: 100px;
+            /* border:1px solid red; */
+        }
+
+        .top {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border:1px solid red;
+            transform: scaleY(1) perspective(8.6px) rotateX(-5deg);
+            transform-origin: top;
+        }
+
+        .right {
+          display: inline-block;
+          width:49% ;
+          height: 100%;
+          border-left:0.5px solid blue;
+          /* background-color: brown; */
+        }
+
+        .bottom {
+            position: absolute;
+            top: -2px;
+            width: 100px;
+            height: 100px;
+            border:1px solid red;
+            transform: scaleY(1) perspective(8.5px) rotateX(5deg);
+            transform-origin: bottom;
+        }
+
+        .left {
+         display:block;
+         float: right;
+          width:49% ;
+          height: 100%;
+          /* background-color: blue; */
+          border-right:0.5px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top" ></div>
+        <span class="right" onclick="changeText(this)"></span>
+        <div class="bottom"></div>
+        <span class="left" onclick="changeText(this)"></span>
+    </div>
+    <script>
+       function changeText(id) { 
+    // onclick="changeText(this)"
+   console.log('22')
+
+}
+
+
+
+    </script>
+</body>
+
+</html>

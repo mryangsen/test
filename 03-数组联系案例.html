@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数组方法
+        // 一  arr.push() 从后面添加元素，返回值为添加完后的数组的长度
+        // var array=[] 
+        // var arr =[1,3,4,5,6,7,8]
+        // // var list=[77,88,99,222]
+        // // array.push(list)
+        // array.push(arr)
+        // console.log(array)
+        //二 arr.pop() 从后面删除元素，只能是一个，返回值是删除的元素
+        // var arr =[1,3,4,5,6,7,8]
+        // arr.pop(arr)
+        // console.log(arr)  
+        //三 arr.pop() 从后面删除元素，只能是一个，返回值是删除的元素
+        // var arr =[1,3,4,5,6,7,8]
+        // arr.pop
+        // console.log(arr.pop())  
+        //四 arr.shift() 从前面删除元素，只能删除一个 返回值是删除的元素
+        // var arr =[1,3,4,5,6,7,8]
+        // console.log(arr.shift())  
+        //五 arr.unshift() 从前面添加元素, 返回值是添加完后的数组的长度
+        // let arr = [1, 2, 3, 4, 5]
+        // console.log(arr.unshift(2))    // 6
+        // console.log(arr)  //[2,1,2,3,4,5]
+        //六 arr.splice(i,n) 删除从i(索引值)开始之后的那个元素。返回值是删除的元素 会改变原数组
+        // let arr = [1, 2, 3, 4, 5]
+        // console.log(arr.splice(2,2))
+        // console.log(arr)
+        //七 arr.concat() 连接两个数组 返回值为连接后的新数组
+        // let arr = [1, 2, 3, 4, 5]
+        // console.log(arr.concat(9,88))
+        // console.log(arr)
+        //八 str.split() 将字符串转化为数组
+        // let arr = '123456'
+        // console.log(arr.split('')) // ["1", "2", "3", "4", "5", "6"]
+        // console.log(arr)
+
+        //九 arr.sort() 将数组进行排序,返回值是排好的数组，默认是按照最左边的数字进行排序，不是按照数字大小排序的，见例子
+        // let arr = [2,10,6,1,4,22,3]
+        // // console.log(arr.sort())    // // [1, 10, 2, 22, 3, 4, 6]
+        // // let list=arr.sort((a,b)=>a-b)  //  [1, 2, 3, 4, 6, 10, 22] ]  从小到大排序 
+        // let list=arr.sort((a,b)=>b-a)  // [22, 10, 6, 4, 3, 2, 1]  从大到小排序
+        // console.log(list)
+        //十 arr.reverse() 将数组反转,返回值是反转后的数组
+        // let arr = [1, 2, 3, 4, 5]
+        // console.log(arr.reverse())    // [5,4,3,2,1]
+        // console.log(arr)    // [5,4,3,2,1]
+        //十一 arr.slice(start,end) 切去索引值start到索引值end的数组，不包含end索引的值，返回值是切出来的数组  不改变原来长度
+        // let arr = [1,2,3,4,5,6,7,8,9]
+        // console.log(arr.slice(2,4)) 
+        // console.log(arr.slice(0,2)) 
+        // console.log(arr)
+        //十二 arr.forEach(callback) 遍历数组,无return  即使有return，也不会返回任何值，并且会影响原来的数组 　callback的参数： value --当前索引的值 index --索引  array --原数组
+        // let arr = [1,2,3,4,5,6,7,8,9]
+        // arr.forEach((value,index,arr)=>{
+        // //    console.log('value==>',value)
+        // //    console.log('index==>',index)
+        //        console.log('arr==>',arr)
+        // })
+        //十三  arr.map(callback) 映射数组(遍历数组),有return 返回一个新数组 。 　callback的参数： value --当前索引的值 index --索引  array --原数组
+        // let arr = [1,2,3,4,5,6,7,8,9]
+        // arr.map((value,index,arr)=>{
+        //     value = value * 2
+        //    console.log('value==>',value)
+        // //    console.log('index==>',index)
+        //     //    console.log('arr==>',arr)
+        // })
+        //   有返回值
+        //     let arr = [1,2,3,4,5,6,7,8,9]
+        //     let list= arr.map((value,index,arr)=>{
+        //         value = value * 3
+        //     //    console.log('index==>',index)
+        //        return value
+        //     })
+        //    console.log(arr)
+        //    console.log(list)
+        //十四 arr.filter(callback) 过滤数组，返回一个满足要求的数组  　callback的参数： value --当前索引的值 index --索引  
+        // let arr = [1,2,3,4,5,6,7,8,9,2,2,4,4,3,3,3,7,7,8]
+        // var list= arr.filter((value,index,self)=>{
+        //  return self.indexOf(value)===index
+        // //  console.log('value==>',value)
+        // //  console.log('index==>',index)
+        // })    
+        // console.log(list.toString())
+        // console.log(list)
+        //十二 arr.forEach(callback) 遍历数组,无return  即使有return，也不会返回任何值，并且会影响原来的数组 　callback的参数： value --当前索引的值 index --索引  array --原数组
+        // let arr = [1,2,3,4,5,6,7,8,9]
+        // arr.forEach((value,index,arr)=>{
+        // //    console.log('value==>',value)
+        // //    console.log('index==>',index)
+        //       console.log('arr==>',arr)
+        // })
+        //十三   arr.indexOf() 查找某个元素的索引值，若有重复的，则返回第一个查到的索引值若不存在，则返回 -1
+        // let arr = [1,2,3,4,5,6,7,8,9]
+        // console.log(arr.indexOf(2))
+        //十四   arr.lastIndexOf()   和arr.indexOf()的功能一样，不同的是从后往前查找
+        // let arr = [1,2,3,4,5,2]
+        // let arr1 = arr.lastIndexOf(2) 
+        // console.log(arr1)
+        //十五   Array.from() 将伪数组变成数组，就是只要有length的就可以转成数组。 ---es6
+        //  let arr = '123452'
+        //  console.log(Array.from(arr))
+        //十六  Array.of() 将一组值转换成数组，类似于声明数组    ---es6
+        //  let arr = '123452'
+        //  console.log(Array.of(arr))   
+        //十七  arr.find(callback) 找到第一个符合条件的数组成员
+        // let arr = [1, 2, 3, 4, 5, 2, 4]
+        // let arr1 = arr.find((value, index, array) => value > 2)
+        // console.log(arr1)   // 3
+        // 一 :数组合并
+        // const numbers = [1, 2, 3, 4, 5]
+        // const arr = [88,99,23,24,55,66,88]
+        // var list= numbers.concat(arr)
+        //  console.log(list)
+        // const copy = numbers.map(num => num)
+        // copy.push(6) // 添加新项以证明不会修改原始数组
+        // console.log(copy);
+        // console.log(numbers);
+        // 二 对象合并
+        // let user = { name: '无敌人', age: 19 };
+        // let page = { pageSize: 10, currentPage: 1 };
+        // let newObj = {};
+        // Object.assign(newObj,user,page)
+        // console.log(newObj)
+        // let setList = new Set(['星期一','星期二','星期三','星期三'])
+        // console.log(setList);
+         var list = [{
+               id:'1',
+               name:'小明',
+               children:[{
+                   id:'88',
+                   name:'小红',
+                   lastChilden:[{
+                       id:'1000',
+                       name:'小刚',
+                       sex:'男',
+                   }]
+               }]
+         }]
+      
+
+
+    </script>
+
+</body>
+
+</html>
